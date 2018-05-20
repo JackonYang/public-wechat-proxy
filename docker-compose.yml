@@ -13,6 +13,7 @@ services:
     volumes:
       - .:/src
     environment:
+      - CHAT_SERVER_HOST=jackon.me
       - DEFAULT_REDIS_CONN=redis://redis:6379/0
       - MONITOR_REDIS_CONN=redis://redis:6379/9
       - DEBUG=True

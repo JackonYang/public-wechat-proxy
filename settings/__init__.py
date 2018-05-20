@@ -146,4 +146,5 @@ REST_FRAMEWORK = {
 }
 
 
+from ._chat_server import *  # noqa
 # from ._logging import *  # noqa
