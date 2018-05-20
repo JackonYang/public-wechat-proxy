@@ -2,6 +2,9 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from wechatpy import parse_message
+from wechatpy.replies import TextReply
+
 
 @csrf_exempt
 def listening(request):
@@ -20,5 +23,9 @@ def do_auth(request):
 
 
 def reply_message(request):
-    print(request.body)
-    return HttpResponse('welcome')
+    income_msg = parse_message(request.body)
+    print income_msg
+    reply_text = 'welcome'
+    reply = TextReply(content=reply_text, message=income_msg)
+    reply_xml = reply.render()
+    return HttpResponse(reply_xml)
