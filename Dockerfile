@@ -52,6 +52,10 @@ RUN pip install pytest-django==3.1.2
 # https://niwinz.github.io/django-redis/latest/#_supported_django_redis_versions
 RUN pip install django-redis==4.8.0
 
+
+# PROJECT REQUIREMENTS
+RUN pip install wechatpy[cryptography]==1.7.0
+
 # RUN pip install django-grappelli==2.8.1
 # RUN pip install rollbar==0.13.8
 
