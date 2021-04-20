@@ -9,11 +9,11 @@ services:
       #  - PIP_HOST=host
       #  - PIP_ROOT_URL=url
     ports:
-      - "8000:8000"
+      - "6081:8000"
     volumes:
       - .:/src
     environment:
-      - CHAT_SERVER_HOST=jackon.me
+      # - CHAT_SERVER_HOST=jackon.me
       - DEFAULT_REDIS_CONN=redis://redis:6379/0
       - MONITOR_REDIS_CONN=redis://redis:6379/9
       - DEBUG=True
